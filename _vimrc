@@ -14,7 +14,7 @@ autocmd GUIEnter * set visualbell t_vb=
 """"""""""" Key mappings
 map  <C-n> :NERDTreeToggle<CR>
 map  <C-p> :find 
-map  <C-q> :qa
+" xmap  <C-q> :wq<CR>
 
 """ from Andrew
 nnoremap j gj
