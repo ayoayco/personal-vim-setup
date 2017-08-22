@@ -1,9 +1,26 @@
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.*~  " Windows
+
+highlight LineNr ctermfg=grey
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+nmap <F5> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F5> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+set ic
+
+"let g:rehash256 = 1
+"syntax on
+"let g:molokai_original = 1
+"colorscheme molokai
+
+
 """"""""""" Set tab to 4 spaces
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 
 """"""""""" Display line numbers
-:set nu
+set nu
 
 
 """"""""""" Disable error bells
@@ -38,8 +55,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 """"""""""" Open NERDTree by default
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
 """"""""""" Start Enable Vundle
@@ -55,13 +72,18 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-syntastic/syntastic'
-" Plugin 'tomasr/molokai'
+Plugin 'tomasr/molokai'
+Plugin 'trevordmiller/nova-vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'othree/html5.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-scripts/Conque-Shell'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
