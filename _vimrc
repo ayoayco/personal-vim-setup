@@ -1,3 +1,16 @@
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.*~  " Windows
 
 highlight LineNr ctermfg=grey
@@ -29,6 +42,8 @@ autocmd GUIEnter * set visualbell t_vb=
 
 
 """"""""""" Key mappings
+nmap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 map  <C-n> :NERDTreeToggle<CR>
 map  <C-p> :find 
 " xmap  <C-q> :wq<CR>
@@ -38,16 +53,20 @@ nnoremap j gj
 nnoremap k gk
 xnoremap j gj
 xnoremap k gk
+nmap = +
 nmap J 5j
 nmap K 5k
 xmap J 5j
 xmap K 5k
+nmap DD d5d
+xmap DD d5d
 nmap gh <C-w>h
 nmap gj <C-w>j
 nmap gk <C-w>k
 nmap gl <C-w>l
 nmap <C-l> gt
 nmap <C-h> gT
+nmap <C-/> :nohl<CR>
 
 
 """"""""""" Close vim when NERDTree is the only split left open
@@ -76,14 +95,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'tomasr/molokai'
-Plugin 'trevordmiller/nova-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-scripts/Conque-Shell'
+Plugin 'junegunn/vim-easy-align'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
