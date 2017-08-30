@@ -1,0 +1,42 @@
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.disableAnnoyingNeovimMessage": true,
+      // Non-recursive remapped keys in normal mode. Allows mapping to vim commands or vscode actions. See README for more.
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
+        },
+        {
+            "before": ["J"],
+            "after": ["5", "j"]
+        },
+        {    
+            "before": ["K"],
+            "after": ["5", "k"]
+        },
+        {    
+            "before": ["H"],
+            "after": ["5", "h"]
+        },
+        {    
+            "before": ["L"],
+            "after": ["5", "l"]
+        },
+        {    
+            "before": ["="],
+            "after": ["-"]
+        },
+        {    
+            "before": ["-"],
+            "after": ["+"]
+        }
+    ]
