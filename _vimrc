@@ -1,8 +1,11 @@
-:set wrap
-:set linebreak
-:set nolist  " list disables linebreak
-:set textwidth=0
-:set wrapmargin=0
+set nobackup
+set nowritebackup
+
+set wrap
+set linebreak
+set nolist  " list disables linebreak
+set textwidth=0
+set wrapmargin=0
 
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tslint', 'tsc']
