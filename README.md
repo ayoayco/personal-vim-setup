@@ -1,4 +1,4 @@
-# This is repository contains my personal vim setup
+# This repository contains my personal vim setup
 
 It requires [vundle](https://github.com/VundleVim/Vundle.vim) to install all plugins.
 
