@@ -33,11 +33,6 @@ imap <F5> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
 set ic
 
-"let g:rehash256 = 1
-"syntax on
-"let g:molokai_original = 1
-
-
 """"""""""" Set tab to 4 spaces
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
@@ -98,21 +93,28 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
+""" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+""" TODO - review following plugins
+Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/vim-easy-align'
+
+""" Syntax highlighting
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'junegunn/vim-easy-align'
+
+""" Themes
+Plugin 'morhetz/gruvbox'
+Plugin 'Rigellute/shades-of-purple.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -150,8 +152,21 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
-set background=dark
-colorscheme gruvbox
+
+"""" enable 24bit true color
+" If you have vim >=8.0 or Neovim >= 0.1.5
+" Enable true color 启用终端24位色
+if (has("termguicolors"))
+ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+ set termguicolors
+ colorscheme shades_of_purple
+else
+ colorscheme gruvbox
+endif
+
+""" syntax highlighting and color scheme
+syntax enable
 
 if has("gui_running")
   if has("gui_gtk2")
